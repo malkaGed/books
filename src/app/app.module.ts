@@ -8,6 +8,7 @@ import { BooksContainerComponent } from './Components/books-container/books-cont
 import { NavbarComponent } from './Components/navbar/navbar.component';
 import { HomeComponent } from './Components/home/home.component';
 import { FormsModule } from '@angular/forms';
+import { UserComponent } from './Components/user/user.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { FormsModule } from '@angular/forms';
     BookDetailsComponent,
     BooksContainerComponent,
     NavbarComponent,
-    HomeComponent
+    HomeComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule,
