@@ -1,0 +1,39 @@
+<div *ngIf="!isEdit && !isNew" class="card mb-4 shadow-sm">
+  <div class="card-body">
+    <h5 class="card-title">{{CurrentBook.Title}}</h5>
+    <p class="card-text">Writen by: {{CurrentBook.Author}}</p>
+    <p class="card-text">Publishing date: {{CurrentBook.PublishingDate | date:'dd/MM/yyyy'}}</p>
+    <a class="btn btn-primary mr-2" (click)="isEdit=!isEdit">עריכה</a>
+    <a class="btn btn-primary" (click)="deleteItem(CurrentBook.Id)">מחיקה</a>
+  </div>
+</div>
+
+
+
+<div *ngIf="isEdit || isNew" class="card mb-4 shadow-sm p-2">
+  
+
+      <div class="form-group row">
+        <label for="inputTitle" class="col-sm-3 col-form-label">כותרת</label>
+        <div class="col-sm-9">
+          <input type="text"  [(ngModel)]="CurrentBook.Title" class="form-control" id="inputTitle" placeholder="כותרת">
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="inputAuthor" class="col-sm-3 col-form-label">מו"ל</label>
+        <div class="col-sm-9">
+          <input type="text"  [(ngModel)]="CurrentBook.Author" class="form-control" id="inputAuthor" placeholder="מול">
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="inputPublishingDate" class="col-sm-3 col-form-label">תאריך</label>
+        <div class="col-sm-9">
+          <input type="text"  [(ngModel)]="CurrentBook.PublishingDate" class="form-control" id="inputPublishingDate" placeholder="תאריך">
+        </div>
+      </div>
+     
+      <div><a class="btn btn-primary" (click)="saveIfNew();isEdit=!isEdit">שמור</a></div>
+  
+</div>
